@@ -48,8 +48,8 @@ Some rough Classes, add more during the development.
 
 ### Phase1
 
-- Enter the hands of the opponent and yours (1v1), then output the win probability
-- Based on the position and hand, decide to open or not (No 3-bet function yet)
+- Enter the hands of the opponent and yours (1v1), then output the win probability // Analyzer
+- Based on the position and hand, decide to open or not (No 3-bet function yet) // Add position
 
 ### Phase2
 
