@@ -4,6 +4,9 @@ import Hand.Card;
 import Hand.HandValue;
 import Hand.SetValue;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Judge {
     private boolean isRoyalFlush(Card[] cards) {
         if (cards[4].value == 14 &&
@@ -239,15 +242,16 @@ public class Judge {
             kick3 = cards[2].value;
         }
 
-        return new HandValue(SetValue.TWO_PAIRS, new int[]{topCard, kick1, kick2, kick3});
+        return new HandValue(SetValue.PAIR, new int[]{topCard, kick1, kick2, kick3});
     }
 
     private HandValue buildHighCards(Card[] cards) {
-        return new HandValue(SetValue.TWO_PAIRS,
+        return new HandValue(SetValue.HIGH_CARD,
                 new int[]{cards[4].value, cards[3].value, cards[2].value, cards[1].value, cards[0].value});
     }
 
     public HandValue judgeHandValue(Card[] cards) {
+        Arrays.sort(cards);
         if (isRoyalFlush(cards)) {
             return buildRoyalFlush(cards);
         } else if (isStraightFlush(cards)) {

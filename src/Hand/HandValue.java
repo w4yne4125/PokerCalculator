@@ -1,5 +1,7 @@
 package Hand;
 
+import java.util.Arrays;
+
 public class HandValue {
     public SetValue setValue;
     public int[] pointValue;
@@ -13,6 +15,7 @@ public class HandValue {
         // 1 if true
         // -1 if false
         // 0 if tie
+
         if (this.setValue.ordinal() > that.setValue.ordinal()) {
             return 1;
         } else if (this.setValue.ordinal() < that.setValue.ordinal()) {
